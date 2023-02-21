@@ -38,7 +38,9 @@ const countersArray = new Array(10).fill(() => {
   }
 });
 
-countersArray.forEach((countFunction) => countFunction());
+countersArray.forEach((countFunction) => {
+  countFunction();
+});
 
 /* Nivell 3
 Exercici 2: Crea una funció anònima autoinvocable igualada a una variable que mostri per consola el nom de l'usuari/ària a rebut com a paràmetre. */
