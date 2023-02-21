@@ -45,4 +45,4 @@ countersArray.forEach((countFunction) => {
 /* Nivell 3
 Exercici 2: Crea una funció anònima autoinvocable igualada a una variable que mostri per consola el nom de l'usuari/ària a rebut com a paràmetre. */
 
-const userName = ((userName) => console.log(userName))("Berenguer");
+const userNameResolved = ((userName) => console.log(userName))("Berenguer");
