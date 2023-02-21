@@ -13,3 +13,18 @@ const personSurname = "Pou Llavina";
 
 console.log(`Name: ${personName}
 Surname: ${personSurname}`);
+
+/* Nivell 2
+Exercici 2: Invoca una funció que retorni un valor des de dins d'una template literal. */
+
+const getPhraseLength = (phrase) => {
+  return phrase.length;
+};
+
+const myPhrase = "Next monday we are going to MWC Barcelona";
+
+console.log(
+  `The phrase "${myPhrase}" has ${getPhraseLength(
+    myPhrase
+  )} characters, spaces included.`
+);
