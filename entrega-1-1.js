@@ -28,3 +28,14 @@ console.log(
     myPhrase
   )} characters, spaces included.`
 );
+
+/* Nivell 3
+Exercici 1: Crea una matriu de deu funcions i emplena-la mitjançant un bucle de manera que cada funció compti del 0 al 9 per la consola. Invoca cada funció de l'array iterativament. Haurà de mostrar-se per consola el compte del 0 al 9 deu vegades. */
+
+const countersArray = new Array(10).fill(() => {
+  for (let i = 0; i < 10; i++) {
+    console.log(i);
+  }
+});
+
+countersArray.forEach((countFunction) => countFunction());
