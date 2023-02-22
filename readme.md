@@ -2,6 +2,8 @@
 
 ## Entrega 1.1: Functions & Template Literals
 
+[entrega-1-1.js](entrega-1-1.js)
+
 **Descripció**: Treballarem amb funcions i templates literals, elements fonamentals en la programació amb JavaScript ;)
 Utilitza l'intèrpret de node en tots els casos.
 
