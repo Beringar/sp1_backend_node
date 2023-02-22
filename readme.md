@@ -2,8 +2,6 @@
 
 ## Entrega 1.1: Functions & Template Literals
 
-[entrega-1-1.js](entrega-1-1.js)
-
 **Descripció**: Treballarem amb funcions i templates literals, elements fonamentals en la programació amb JavaScript ;)
 Utilitza l'intèrpret de node en tots els casos.
 
@@ -20,6 +18,8 @@ Utilitza l'intèrpret de node en tots els casos.
 
 - Exercici 1: Crea una matriu de deu funcions i emplena-la mitjançant un bucle de manera que cada funció compti del 0 al 9 per la consola. Invoca cada funció de l'array iterativament. Haurà de mostrar-se per consola el compte del 0 al 9 deu vegades.
 - Exercici 2: Crea una funció anònima autoinvocable igualada a una variable que mostri per consola el nom de l'usuari/ària a rebut com a paràmetre.
+
+Solució: [entrega-1-1.js](entrega-1-1.js)
 
 ## Entrega 1.2: Classes & Arrow Functions
 
