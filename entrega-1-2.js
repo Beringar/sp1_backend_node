@@ -64,7 +64,7 @@ console.log(objectB);
 
 //comprovem que el prototype és de la classe abstracta
 console.log(Object.getPrototypeOf(objectA));
-console.log(Object.getPrototypeOf(objectA));
+console.log(Object.getPrototypeOf(objectB));
 
 // proposta Omar, fent servir prototype
 const objectAbstractPrototype = (nom) => {
