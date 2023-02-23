@@ -63,10 +63,16 @@ console.log(objectA);
 console.log(objectB);
 
 //comprovem que el prototype és de la classe abstracta
-console.log(Object.getPrototypeOf(objectA));
-console.log(Object.getPrototypeOf(objectB));
+console.log(
+  "Object A is instance of AbstractClass: ",
+  objectA instanceof AbstractClass
+);
+console.log(
+  "Object B is instance of AbstractClass: ",
+  objectB instanceof AbstractClass
+);
 
-// proposta Omar, fent servir prototype
+// Proposta Omar, fent servir prototype
 const objectAbstractPrototype = (nom) => {
   const obj = Object.create(AbstractClass.prototype);
   obj.nom = nom;
@@ -75,6 +81,12 @@ const objectAbstractPrototype = (nom) => {
 
 const objectC = objectAbstractPrototype("Omar");
 console.log(objectC);
+
+//comprovem que el prototype és de la classe abstracta
+console.log(
+  "Object C is instance of AbstractClass: ",
+  objectC instanceof AbstractClass
+);
 
 objectA.dirNom();
 objectB.dirNom();
