@@ -38,3 +38,5 @@ Utilitza l'intèrpret de node en tots els casos.
 ### Nivell 3
 
 - Exercici 1: Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
+
+**SOLUCIÓ Entrega 1.2: Classes & Arrow Functions** --> [entrega-1-2.js](entrega-1-2.js)
