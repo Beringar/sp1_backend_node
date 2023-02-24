@@ -62,7 +62,7 @@ const objectB = objectAbstractFactory("Maria");
 console.log(objectA);
 console.log(objectB);
 
-//comprovem que el prototype és de la classe abstracta
+//comprovem que la instància és de la classe abstracta
 console.log(
   "Object A is instance of AbstractClass: ",
   objectA instanceof AbstractClass
@@ -82,7 +82,7 @@ const objectAbstractPrototype = (nom) => {
 const objectC = objectAbstractPrototype("Omar");
 console.log(objectC);
 
-//comprovem que el prototype és de la classe abstracta
+//comprovem que la instància és de la classe abstracta
 console.log(
   "Object C is instance of AbstractClass: ",
   objectC instanceof AbstractClass
