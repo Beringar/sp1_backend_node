@@ -163,7 +163,7 @@ getEmployee(1, employees).then((employee) =>
 Exercici 1: Fixa un element catch a la invocació del nivell anterior que capturi qualsevol error i el mostri per la consola. */
 console.log("---- nivell 3 - ex 1 ----");
 
-//fem petar la consulta amb un employee existent però sense salary associat. Amb catch per la promesa exterior. Salta el catch exterior i mostra l'error del reject interior.
+//fem petar la consulta amb un employee existent però sense salary associat. Amb catch per la promesa exterior(getEmployee). Salta el catch exterior i mostra l'error del reject de la promesa interior(getSalary).
 getEmployee(4, employees)
   .then((employee) =>
     getSalary(employee, salaries).then((salary) =>
