@@ -83,3 +83,28 @@ const printEmployeeData = async (employeeId) => {
   //invoquem amb un id existent però sense salari associat
   await printEmployeeData(4);
 })();
+
+/* Nivell 1
+Exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació. */
+
+console.log("---- nivell 1 - ex 2 ----");
+
+const getNameAfter2Secs = () =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Berenguer after 2 secs!");
+    }, 2000);
+  });
+
+const getName = async () => {
+  try {
+    return await getNameAfter2Secs();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//invoquem la funció getName, que retorna la funció getNameAfter2secs que retorna una promise amb resolve després de 2 secs.
+(async () => {
+  console.log(await getName());
+})();
