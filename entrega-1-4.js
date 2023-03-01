@@ -1,8 +1,6 @@
 /* Nivell 1
 Exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi per pantalla el nom de l'empleat/da i el seu salari, usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior. */
 
-console.log("---- nivell 1 - ex 1 ----");
-
 let employees = [
   {
     id: 1,
@@ -76,6 +74,7 @@ const printEmployeeData = async (employeeId) => {
 (async () => {
   //invoquem amb un id que existeix i que té salari
   await printEmployeeData(3);
+  console.log("---- ↑ ---- nivell 1 - ex 1 ---- ↑ ----");
 
   //invoquem amb un id que no existeix
   await printEmployeeData(9);
@@ -86,8 +85,6 @@ const printEmployeeData = async (employeeId) => {
 
 /* Nivell 1
 Exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació. */
-
-console.log("---- nivell 1 - ex 2 ----");
 
 const getNameAfter2Secs = () =>
   new Promise((resolve) => {
@@ -105,6 +102,51 @@ const getName = async () => {
 };
 
 //invoquem la funció getName, que retorna la funció getNameAfter2secs que retorna una promise amb resolve després de 2 secs.
+
 (async () => {
   console.log(await getName());
+  console.log("---- ↑ ---- nivell 1 - ex 2 ---- ↑ ----");
+})();
+
+/* Nivell 2
+Exercici 1: Crea una funció que retorni el doble del número que li passa com a paràmetre després de 2 segons.
+Crea una altra funció que rebi tres números i calculi la suma dels seus dobles fent servir la funció anterior. */
+
+const getDouble = (number) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(number * 2);
+    }, 2000);
+  });
+
+const sumDoubles = async (numA, numB, numC) => {
+  const doubles = await Promise.all([
+    getDouble(numA),
+    getDouble(numB),
+    getDouble(numC),
+  ]);
+  return doubles.reduce((acc, double) => acc + double, 0);
+};
+
+//invoquem la funció asíncrona sumDoubles i fem console de l'output
+
+(async () => {
+  console.log(await sumDoubles(2, 10, 3)); // 30
+  console.log("---- ↑ ---- nivell 2 - ex 1 ---- ↑ ----");
+})();
+
+//alternativa fent servir Rest paramaeter per acceptar la quantitat de numbers que vulguem
+
+const sumDoublesRest = async (...numbers) => {
+  const doubles = await Promise.all(numbers.map((number) => getDouble(number)));
+  return doubles.reduce((acc, double) => acc + double, 0);
+};
+
+//invoquem la funció asíncrona sumDoubles amb Rest parameter (qualsevol número d'arguments supported!) i fem console de l'output
+
+(async () => {
+  console.log(await sumDoublesRest(1, 2, 3, 4, 5, 6, 7, 8)); // 72
+  console.log(
+    "---- ↑ ---- nivell 2 - ex 1 ---- ↑ ---- Alternativa amb rest parameter"
+  );
 })();
