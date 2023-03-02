@@ -117,7 +117,11 @@ Crea una altra funció que rebi tres números i calculi la suma dels seus dobles
           resolve(number * 2);
         }, 2000);
       } else {
-        reject(new Error("Received value is not a number!"));
+        reject(
+          new Error(
+            `Received value: (${number}) of type ${typeof number}, is not a valid number!`
+          )
+        );
       }
     });
 
@@ -154,7 +158,7 @@ Crea una altra funció que rebi tres números i calculi la suma dels seus dobles
   /* Nivell 3
 Exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2. */
 
-  console.log("-------- nivell 3 - ex 1 --------");
+  console.log("-------- nivell 3 - ex 1 -------- error handling");
 
   console.log("printEmployeeData() sense ID");
   await printEmployeeData();
@@ -170,5 +174,22 @@ Exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2. */
   console.log("printEmployeeData('berenguer') amb un ID no numèric");
   await printEmployeeData("berenguer");
 
-  console.log(await getDouble());
+  console.log("getDouble() sense passar paràmetre");
+  console.log(await getDouble().catch((error) => console.log(error)));
+
+  console.log("getDouble(true) passant paràmetre que no és un number");
+  console.log(await getDouble(true).catch((error) => console.log(error)));
+
+  console.log("sumDoubles() sense passar paràmetres");
+  console.log(await sumDoubles().catch((error) => console.log(error)));
+
+  console.log("sumDoubles(1,2,'3') passant un paràmetre que no és un number");
+  console.log(await sumDoubles(1, 2, "3").catch((error) => console.log(error)));
+
+  console.log(
+    "sumDoublesRrest(3, [1,2]) passant un paràmetre que no és un number"
+  );
+  console.log(
+    await sumDoublesRest(3, [1, 2]).catch((error) => console.log(error))
+  );
 })();
