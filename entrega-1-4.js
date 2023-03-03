@@ -2,7 +2,7 @@
   /* Nivell 1
 Exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi per pantalla el nom de l'empleat/da i el seu salari, usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior. */
 
-  console.log("-------- nivell 1 - ex 1 --------");
+  console.log("------------- N1 E1 ------------");
 
   let employees = [
     {
@@ -38,26 +38,26 @@ Exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi
     },
   ];
 
-  const getEmployee = (employeeId, employeesList) => {
+  const getEmployee = (employeeId) => {
     return new Promise((resolve, reject) => {
-      const employee = employeesList.find(({ id }) => id === employeeId);
+      const employee = employees.find(({ id }) => id === employeeId);
       if (employee) {
         resolve(employee);
       } else {
-        reject(new Error(`Employee with id ${employeeId} not found!`));
+        reject(`ERROR: Employee with id ${employeeId} not found!`);
       }
     });
   };
 
-  const getSalary = (employee, salariesList) => {
+  const getSalary = (employee) => {
     return new Promise((resolve, reject) => {
       try {
-        const salary = salariesList.find(({ id }) => id === employee.id);
+        const salary = salaries.find(({ id }) => id === employee.id);
         if (salary) {
           resolve(salary);
         } else {
           reject(
-            new Error(`There's no salary for employee with id ${employee.id}!`)
+            `ERROR: There's no salary for employee with id ${employee.id}!`
           );
         }
       } catch (error) {
@@ -69,8 +69,8 @@ Exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi
 
   const printEmployeeData = async (employeeId) => {
     try {
-      const employee = await getEmployee(employeeId, employees);
-      const salary = await getSalary(employee, salaries);
+      const employee = await getEmployee(employeeId);
+      const salary = await getSalary(employee);
       console.log(`Name: ${employee.name}, Salary: ${salary.salary}`);
     } catch (error) {
       console.log(error);
@@ -83,22 +83,16 @@ Exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi
   /* Nivell 1
 Exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació. */
 
-  console.log("-------- nivell 1 - ex 2 --------");
+  console.log("------------- N1 E2 ------------");
 
   const getNameAfter2Secs = () =>
     new Promise((resolve) => {
       setTimeout(() => {
-        resolve("Berenguer after 2 secs!");
+        resolve("Berenguer after 2 seconds!");
       }, 2000);
     });
 
-  const getName = async () => {
-    try {
-      return await getNameAfter2Secs();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const getName = async () => await getNameAfter2Secs();
 
   //invoquem la funció getName, que retorna la funció getNameAfter2secs que retorna una promise amb resolve després de 2 secs.
 
@@ -108,7 +102,7 @@ Exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni u
 Exercici 1: Crea una funció que retorni el doble del número que li passa com a paràmetre després de 2 segons.
 Crea una altra funció que rebi tres números i calculi la suma dels seus dobles fent servir la funció anterior. */
 
-  console.log("-------- nivell 2 - ex 1 --------");
+  console.log("------------- N2 E1 ------------");
 
   const getDouble = (number) =>
     new Promise((resolve, reject) => {
@@ -117,11 +111,7 @@ Crea una altra funció que rebi tres números i calculi la suma dels seus dobles
           resolve(number * 2);
         }, 2000);
       } else {
-        reject(
-          new Error(
-            `Received value: (${number}) of type ${typeof number}, is not a valid number!`
-          )
-        );
+        reject(`ERROR: Received value: ${number} is not a valid number!`);
       }
     });
 
@@ -140,10 +130,6 @@ Crea una altra funció que rebi tres números i calculi la suma dels seus dobles
 
   //alternativa fent servir Rest paramaeter per acceptar la quantitat de numbers que vulguem
 
-  console.log(
-    "-------- nivell 2 - ex 1 -------- Alternativa amb Rest parameter"
-  );
-
   const sumDoublesRest = async (...numbers) => {
     const doubles = await Promise.all(
       numbers.map((number) => getDouble(number))
@@ -153,12 +139,14 @@ Crea una altra funció que rebi tres números i calculi la suma dels seus dobles
 
   //invoquem la funció asíncrona sumDoubles amb Rest parameter (qualsevol número d'arguments supported!) i fem console de l'output
 
+  console.log("------------- N2 E1 alternativa amb Rest operator ------------");
+
   console.log(await sumDoublesRest(1, 2, 3, 4, 5, 6, 7, 8)); // 72
 
   /* Nivell 3
 Exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2. */
 
-  console.log("-------- nivell 3 - ex 1 -------- error handling");
+  console.log("------------- N3 E1 ------------");
 
   console.log("printEmployeeData() sense ID");
   await printEmployeeData();
