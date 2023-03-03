@@ -117,3 +117,5 @@ let salaries = [
 ### Nivell 3
 
 - Exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2.
+
+**SOLUCIÓ Entrega 1.4: Async / Await** --> [entrega-1-4.js](entrega-1-4.js)

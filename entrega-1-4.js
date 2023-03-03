@@ -173,11 +173,4 @@ Exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2. */
 
   console.log("sumDoubles(1,2,'3') passant un paràmetre que no és un number");
   console.log(await sumDoubles(1, 2, "3").catch((error) => console.log(error)));
-
-  console.log(
-    "sumDoublesRrest(3, [1,2]) passant un paràmetre que no és un number"
-  );
-  console.log(
-    await sumDoublesRest(3, [1, 2]).catch((error) => console.log(error))
-  );
 })();
