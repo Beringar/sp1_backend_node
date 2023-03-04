@@ -1,5 +1,13 @@
 # Backend Node.js Sprint 1 - 1.5 Node Utils
 
+## Scripts per executar els exercicis de cada nivell
+
+Des de dins de la carpeta /1_5_node_utils, cal escriure el següent command des del terminal:
+
+npm run n[_num nivell_]e[_num exercici_]
+
+Per exemple per al Nivell 1 Exercici 1, cal escriure: `npm run n1e1`
+
 ## Entrega 1.5: Node Utils
 
 **Descripció**: Els mòduls natius de Node.js permeten als desenvolupadors/es d'aplicacions i mòduls dur a terme diferents tasques: gestió d'arxius, processament d'informació, codificació i encriptació, entre d'altres. Necessitaràs donar un cop d'ull a la documentació de Node!
