@@ -1,0 +1,11 @@
+{
+  "name": "1_5_node_utils",
+  "version": "1.0.0",
+  "description": "1_5_node_utils (Backend Node.js - sp1)",
+  "scripts": {
+    "start": "echo \"Open readme to see available scripts to run exercises\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Berenguer Pou",
+  "license": "ISC"
+}
