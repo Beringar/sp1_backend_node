@@ -10,5 +10,5 @@ const writePhrase = async (filePath, phrase) => {
 
 writePhrase(
   "nivell1.txt",
-  `-- Node Utils 1.5 N1E1 - Timestamp: ${Date.now()}--\n`
+  `- Frase escrita per Nivell 1 Ex 1 - Timestamp: ${Date.now()}-\n`
 );
