@@ -2,7 +2,7 @@
 
 ## Scripts per executar els exercicis de cada nivell
 
-Des de dins de la carpeta /1_5_node_utils, cal escriure el següent command des del terminal:
+Des de dins de la carpeta **/1_5_node_utils**, cal escriure el següent command des del terminal:
 
 npm run n[_num nivell_]e[_num exercici_]
 
