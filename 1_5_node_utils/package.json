@@ -7,6 +7,7 @@
     "n1e1": "node n1e1.js",
     "n1e2": "node n1e2.js",
     "n1e3": "node n1e3.js",
+    "n2e1": "node n2e1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Berenguer Pou",
