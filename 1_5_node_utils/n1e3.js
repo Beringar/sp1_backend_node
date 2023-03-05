@@ -1,3 +1,7 @@
+/* Nivell 1
+Exercici 3: Crea una funció que comprimeixi el fitxer del nivell 1.
+ */
+
 const { promisify } = require("node:util");
 const { createGzip } = require("node:zlib");
 const { pipeline } = require("node:stream");

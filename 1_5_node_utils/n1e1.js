@@ -1,3 +1,7 @@
+/* Nivell 1
+Exercici 1: Crea una funció que, en executar-la, escrigui una frase en un fitxer.
+ */
+
 const fs = require("fs/promises");
 
 const writePhrase = async (filePath, phrase) => {

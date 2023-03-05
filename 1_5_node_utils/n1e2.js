@@ -1,3 +1,7 @@
+/* Nivell 1
+Exercici 2: Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior.
+ */
+
 const fs = require("fs/promises");
 
 const readFile = async (filePath) => {
