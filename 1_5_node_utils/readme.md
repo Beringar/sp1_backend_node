@@ -6,7 +6,9 @@ Des de dins de la carpeta **/1_5_node_utils**, cal escriure el següent command 
 
 npm run n[_num nivell_]e[_num exercici_]
 
-Per exemple per al Nivell 1 Exercici 1, cal escriure: `npm run n1e1`
+Per exemple per al Nivell 1 Exercici 1, cal escriure:
+
+`npm run n1e1`
 
 ## Entrega 1.5: Node Utils
 
