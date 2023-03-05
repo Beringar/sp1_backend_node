@@ -8,12 +8,15 @@ Si executeu aquest arxiu a windows heu de posar com a primer paràmetre de exec 
 
 const { exec } = require("child_process");
 
-exec("cd ~ && ls -la", (err, stdout, stderr) => {
-  if (err) {
-    console.error(`exec error: ${err}`);
-    return;
-  }
-
-  console.log(`Contingut del directori d'usuari:
+const showUserFiles = () => {
+  exec("cd ~ && ls -la", (err, stdout, stderr) => {
+    if (err) {
+      console.error(`exec error: ${err}`);
+      return;
+    }
+    console.log(`Contingut del directori d'usuari:
   ${stdout}`);
-});
+  });
+};
+
+showUserFiles();

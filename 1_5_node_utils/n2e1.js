@@ -3,7 +3,7 @@ Nivell 2
 Exercici 1: Crea una funció que imprimeixi recursivament un missatge per la consola amb demores d'un segon.
 */
 
-const printMessageEverySec = (message, times) => {
+const printMessageEverySecond = (message, times) => {
   let count = 0;
   const printerInterval = setInterval(() => {
     console.log(message);
@@ -12,4 +12,4 @@ const printMessageEverySec = (message, times) => {
   }, 1000);
 };
 
-printMessageEverySec("This is from N2E1", 5);
+printMessageEverySecond("This is from N2E1", 5);
