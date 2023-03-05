@@ -8,7 +8,9 @@ npm run n[_num nivell_]e[_num exercici_]
 
 Per exemple per al Nivell 1 Exercici 1, cal escriure:
 
-`npm run n1e1`
+```
+npm run n1e1
+```
 
 ## Entrega 1.5: Node Utils
 
