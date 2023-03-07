@@ -1,22 +1,24 @@
-/* Nivell 1
-Exercici 3: Crea una funció que comprimeixi el fitxer del nivell 1.
- */
-
 const { promisify } = require("node:util");
 const { createGzip } = require("node:zlib");
 const { pipeline } = require("node:stream");
 const { createReadStream, createWriteStream } = require("node:fs");
 
+/* Nivell 1
+Exercici 3: Crea una funció que comprimeixi el fitxer del nivell 1.
+ */
+
 const pipe = promisify(pipeline);
 
-const do_gzip = async (input, output) => {
-  const gzip = createGzip();
-  const source = createReadStream(input);
-  const destination = createWriteStream(output);
-  await pipe(source, gzip, destination);
+const compressFile = async (input, output) => {
+  try {
+    const gzip = createGzip();
+    const source = createReadStream(input);
+    const destination = createWriteStream(output);
+    await pipe(source, gzip, destination);
+    console.log(`File ${input} comprimit OK --> ${output}`);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-do_gzip("nivell1.txt", "nivell1.txt.gz").catch((err) => {
-  console.error("An error occurred:", err);
-  process.exitCode = 1;
-});
+compressFile("nivell1.txt", "nivell1.txt.gz");
