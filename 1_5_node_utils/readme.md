@@ -12,6 +12,28 @@ Per exemple per al Nivell 1 Exercici 1, cal escriure:
 npm run n1e1
 ```
 
+## **IMPORTANT: Com que s'escriuen i s'esborren arxius per a cada nivell i exercici, és important executar els exercicis en seqüència:**
+
+```
+npm run n1e1
+npm run n1e2
+npm run n1e3
+npm run n2e1
+npm run n2e2
+npm run n3e1-encode
+npm run n3e1-encrypt
+npm run n3e1-decrypt-decode
+```
+
+Si només es vol executar la part Nivell 3 Exercici 1 (codificació, encriptació, desencriptació), s'ha de fer la seqüència següent:
+
+```
+npm run n1e1
+npm run n3e1-encode
+npm run n3e1-encrypt
+npm run n3e1-decrypt-decode
+```
+
 ## Entrega 1.5: Node Utils
 
 **Descripció**: Els mòduls natius de Node.js permeten als desenvolupadors/es d'aplicacions i mòduls dur a terme diferents tasques: gestió d'arxius, processament d'informació, codificació i encriptació, entre d'altres. Necessitaràs donar un cop d'ull a la documentació de Node!
