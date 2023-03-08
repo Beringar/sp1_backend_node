@@ -6,14 +6,14 @@ Exercici 1: Crea una funció que, en executar-la, escrigui una frase en un fitxe
 
 const writePhrase = async (filePath, phrase) => {
   try {
-    await fs.appendFile(filePath, phrase);
-    console.log(`File ${filePath} creat/actualitzat OK`);
+    await fs.writeFile(filePath, phrase);
+    console.log(`------ N1E1: File ${filePath} creat OK`);
   } catch (err) {
     console.log(err);
   }
 };
 
 writePhrase(
-  "nivell1.txt",
-  `--Frase escrita per Nivell 1 Ex 1 - Timestamp: ${Date.now()}--\n`
+  "nodeutils.txt",
+  `Berenguer Pou - Node Utils - Frase escrita des del Nivell 1 Ex 1 - Timestamp: ${Date.now()}`
 );

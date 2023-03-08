@@ -12,4 +12,8 @@ const printMessageEverySecond = (message, times) => {
   }, 1000);
 };
 
-printMessageEverySecond("This is from N2E1", 5);
+console.log(
+  "------ N2E2: Missatges per consola amb demores 1 segon. (limitat a 5 cops, per cancel·lar el setInterval)"
+);
+
+printMessageEverySecond("Missatge Berenguer N2E2", 5);

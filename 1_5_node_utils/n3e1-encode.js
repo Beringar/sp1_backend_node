@@ -12,6 +12,7 @@ const pipe = promisify(pipeline);
 
 const encodeFile = async (input, encoding) => {
   try {
+    console.log("------ N3E1 ENCODE: Encoding...");
     const source = createReadStream(input);
     const outputFile = createWriteStream(`${input}.${encoding}`);
     const dataBuffer = await buffer(source);
@@ -23,7 +24,8 @@ const encodeFile = async (input, encoding) => {
   }
 };
 
-encodeFile("nivell1.txt", "hex");
-encodeFile("nivell1.txt", "base64");
-
+(async () => {
+  await encodeFile("nodeutils.txt", "hex");
+  await encodeFile("nodeutils.txt", "base64");
+})();
 //Nota Berenguer: font per a fer buffer des d'un readable stream: https://nodejs.org/api/webstreams.html#webstreams_utility_consumers

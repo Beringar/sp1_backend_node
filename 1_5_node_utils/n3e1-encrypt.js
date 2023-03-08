@@ -1,10 +1,11 @@
 const fs = require("fs/promises");
-const {
-  scrypt,
-  randomBytes,
-  createCipheriv,
-  createDecipheriv,
-} = require("node:crypto");
+const { existsSync } = require("node:fs");
+const { scrypt, randomBytes, createCipheriv } = require("node:crypto");
+
+/*
+Nivell 3
+Exercici 1, part 2: Crea una funció que guardi els fitxers del punt anterior, ara encriptats amb l'algoritme aes-192-cbc, i esborri els fitxers inicials.
+*/
 
 // Defining algorithm, password and salt. Nota: aquestes variables les agafaríem sempre d'un arxiu tipus .env
 const algorithm = "aes-192-cbc";
@@ -25,7 +26,7 @@ const getDerivedKey = (password, salt, numBytes) => {
 
 const encrypt = async (filePath, encoding) => {
   try {
-    console.log("Encrypting...");
+    console.log("------ N3E1 ENCRYPT: Encrypting...");
     const key = await getDerivedKey(password, salt, 24);
     const iv = randomBytes(16);
 
@@ -47,49 +48,19 @@ const encrypt = async (filePath, encoding) => {
     );
     console.log(`File ${filePath}.enc encriptat OK`);
     await fs.unlink(filePath);
-    await fs.unlink(`${filePath.replace(`.${encoding}`, "")}`);
+    console.log(`File ${filePath} codificat esborrat OK`);
+    if (existsSync(`${filePath.replace(`.${encoding}`, "")}`)) {
+      await fs.unlink(`${filePath.replace(`.${encoding}`, "")}`);
+      console.log(
+        `File ${filePath.replace(`.${encoding}`, "")} original esborrat OK`
+      );
+    }
   } catch (error) {
-    throw error;
-  }
-};
-
-const decrypt = async (filePath, encoding) => {
-  try {
-    console.log("Decrypting...");
-    const key = await getDerivedKey(password, salt, 24).catch((error) => {
-      throw error;
-    });
-
-    const encryptedData = await fs.readFile(filePath, { encoding: "utf8" });
-
-    let iv = Buffer.from(encryptedData.slice(0, 32), "hex");
-    let encryptedText = Buffer.from(encryptedData.slice(32), encoding);
-
-    // Creating Decipher
-    let decipher = createDecipheriv("aes-192-cbc", Buffer.from(key), iv);
-
-    // Updating encrypted text
-    let decrypted = decipher.update(encryptedText);
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
-
-    await fs.writeFile(
-      `${filePath.replace(`.${encoding}.enc`, "")}`,
-      `${decrypted.toString("utf8")}`
-    );
-    console.log(
-      `File ${filePath.replace(
-        `.${encoding}.enc`,
-        ""
-      )} original desencriptat i descodificat OK`
-    );
-    await fs.unlink(filePath);
-    console.log(`File ${filePath} esborrat OK`);
-  } catch (error) {
-    throw error;
+    console.log(error);
   }
 };
 
 (async () => {
-  await encrypt("nivell1.txt.hex", "hex");
-  await decrypt("nivell1.txt.hex.enc", "hex");
+  await encrypt("nodeutils.txt.hex", "hex");
+  await encrypt("nodeutils.txt.base64", "base64");
 })();

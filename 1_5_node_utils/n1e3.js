@@ -15,10 +15,10 @@ const compressFile = async (input, output) => {
     const source = createReadStream(input);
     const destination = createWriteStream(output);
     await pipe(source, gzip, destination);
-    console.log(`File ${input} comprimit OK --> ${output}`);
+    console.log(`------ N1E3: File ${input} comprimit OK --> ${output}`);
   } catch (error) {
     console.log(error);
   }
 };
 
-compressFile("nivell1.txt", "nivell1.txt.gz");
+compressFile("nodeutils.txt", "nodeutils.txt.gz");

@@ -8,6 +8,10 @@
     "n1e2": "node n1e2.js",
     "n1e3": "node n1e3.js",
     "n2e1": "node n2e1.js",
+    "n2e2": "node n2e2.js",
+    "n3e1-encode": "node n3e1-encode.js",
+    "n3e1-encrypt": "node n3e1-encrypt.js",
+    "n3e1-decrypt-decode": "node n3e1-decrypt-decode.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Berenguer Pou",
