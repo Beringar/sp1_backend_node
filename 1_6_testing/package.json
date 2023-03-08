@@ -1,0 +1,17 @@
+{
+  "name": "nodejs_sprint1_1_6_testing",
+  "version": "1.0.0",
+  "description": "Testing Nodejs/jest exercises",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "author": "Berenguer Pou",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0"
+  }
+}
