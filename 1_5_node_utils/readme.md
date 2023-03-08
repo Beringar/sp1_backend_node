@@ -12,7 +12,7 @@ Per exemple per al Nivell 1 Exercici 1, cal escriure:
 npm run n1e1
 ```
 
-## **IMPORTANT: Com que s'escriuen i s'esborren arxius per a cada nivell i exercici, és important executar els exercicis en seqüència:**
+## **IMPORTANT: Com que s'escriuen i s'esborren arxius per a cada nivell i exercici de l'entrega 1.5 Node Utils, és important executar els exercicis en seqüència:**
 
 ```
 npm run n1e1
@@ -25,7 +25,7 @@ npm run n3e1-encrypt
 npm run n3e1-decrypt-decode
 ```
 
-Si només es vol executar la part Nivell 3 Exercici 1 (codificació, encriptació, desencriptació), s'ha de fer la seqüència següent:
+Si només es vol executar la part **Nivell 3 Exercici 1 (codificació, encriptació, desencriptació)**, s'ha de fer la seqüència següent:
 
 ```
 npm run n1e1
