@@ -4,7 +4,7 @@
   "description": "Testing Nodejs/jest exercises",
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watchAll"
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Berenguer Pou",
   "license": "ISC",

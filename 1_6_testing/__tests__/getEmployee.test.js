@@ -35,7 +35,7 @@ describe("Given a getEmployee function", () => {
   });
 
   describe("when invoked with id 9 and array 'employees'", () => {
-    test("should reject...", async () => {
+    test("should reject 'Error: Employee with id 3 not found!'", async () => {
       const id = 9;
       const expectedError = "Error: Employee with id 9 not found!";
 
@@ -46,13 +46,45 @@ describe("Given a getEmployee function", () => {
   });
 
   describe("when invoked with id 3 and empty array", () => {
-    test("should reject...", async () => {
+    test("should reject 'Error: Employee with id 3 not found!'", async () => {
       const id = 3;
       const expectedError = "Error: Employee with id 3 not found!";
 
       const act = () => getEmployee(id, []);
 
       await expect(act).rejects.toMatch(expectedError);
+    });
+  });
+
+  describe("when invoked without arguments", () => {
+    test("should throw error 'Employee ID must be a positive integer'", () => {
+      const expectedError = "Employee ID must be a positive integer";
+
+      const act = () => getEmployee();
+
+      expect(act).toThrow(new Error(expectedError));
+    });
+  });
+
+  describe("when invoked with id 3 and without employees array", () => {
+    test("should throw error 'employees cannot be undefined'", () => {
+      const id = 3;
+      const expectedError = "employees cannot be undefined";
+
+      const act = () => getEmployee(id);
+
+      expect(act).toThrow(new Error(expectedError));
+    });
+  });
+
+  describe("when invoked with id 3 and as employees a value that is not an array", () => {
+    test("should throw an Error", async () => {
+      const id = 3;
+      const invalidEmployees = "not an array";
+
+      const act = () => getEmployee(id, invalidEmployees);
+
+      await expect(act).rejects.toThrow(Error);
     });
   });
 });
