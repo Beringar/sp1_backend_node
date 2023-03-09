@@ -1,23 +1,45 @@
-const { sum } = require("../app/sum");
+const { divide } = require("../app/divide");
 
-describe("Given a sum function", () => {
+describe("Given a divide function", () => {
   describe("when invoked with arguments: 2, 3", () => {
-    test("should return 5", () => {
-      const expected = 5;
+    test("should return 0.6666666666666666", () => {
+      const expected = 0.6666666666666666;
       const values = [2, 3];
 
-      const result = sum(...values);
+      const result = divide(...values);
 
       expect(result).toBe(expected);
     });
   });
 
   describe("when invoked with arguments: 2, 2, 8, 10", () => {
-    test("should return 22", () => {
-      const expected = 22;
+    test("should return 0.0125", () => {
+      const expected = 0.0125;
       const values = [2, 2, 8, 10];
 
-      const result = sum(...values);
+      const result = divide(...values);
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe("when invoked with arguments: 5, 0", () => {
+    test("should return Infinity", () => {
+      const expected = Infinity;
+      const values = [5, 0];
+
+      const result = divide(...values);
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe("when invoked with arguments: 5, -0", () => {
+    test("should return -Infinity", () => {
+      const expected = -Infinity;
+      const values = [5, -0];
+
+      const result = divide(...values);
 
       expect(result).toBe(expected);
     });
@@ -29,7 +51,7 @@ describe("Given a sum function", () => {
         "Insuficcient arguments. At least two numbers are needed";
 
       expect(() => {
-        sum();
+        divide();
       }).toThrow(new Error(expectedError));
     });
   });
@@ -41,7 +63,7 @@ describe("Given a sum function", () => {
       const value = 2;
 
       expect(() => {
-        sum(value);
+        divide(value);
       }).toThrow(new Error(expectedError));
     });
   });
@@ -52,7 +74,7 @@ describe("Given a sum function", () => {
       const values = [2, 1, "4"];
 
       expect(() => {
-        sum(...values);
+        divide(...values);
       }).toThrow(new Error(expectedError));
     });
   });

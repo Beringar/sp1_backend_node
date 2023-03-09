@@ -1,23 +1,45 @@
-const { sum } = require("../app/sum");
+const { multiply } = require("../app/multiply");
 
-describe("Given a sum function", () => {
+describe("Given a multiply function", () => {
   describe("when invoked with arguments: 2, 3", () => {
-    test("should return 5", () => {
-      const expected = 5;
+    test("should return 6", () => {
+      const expected = 6;
       const values = [2, 3];
 
-      const result = sum(...values);
+      const result = multiply(...values);
 
       expect(result).toBe(expected);
     });
   });
 
   describe("when invoked with arguments: 2, 2, 8, 10", () => {
-    test("should return 22", () => {
-      const expected = 22;
+    test("should return 320", () => {
+      const expected = 320;
       const values = [2, 2, 8, 10];
 
-      const result = sum(...values);
+      const result = multiply(...values);
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe("when invoked with arguments: 5, 0", () => {
+    test("should return 0", () => {
+      const expected = 0;
+      const values = [5, 0];
+
+      const result = multiply(...values);
+
+      expect(result).toBe(expected);
+    });
+  });
+
+  describe("when invoked with arguments: 5, -0", () => {
+    test("should return 0", () => {
+      const expected = -0;
+      const values = [5, -0];
+
+      const result = multiply(...values);
 
       expect(result).toBe(expected);
     });
@@ -29,7 +51,7 @@ describe("Given a sum function", () => {
         "Insuficcient arguments. At least two numbers are needed";
 
       expect(() => {
-        sum();
+        multiply();
       }).toThrow(new Error(expectedError));
     });
   });
@@ -41,7 +63,7 @@ describe("Given a sum function", () => {
       const value = 2;
 
       expect(() => {
-        sum(value);
+        multiply(value);
       }).toThrow(new Error(expectedError));
     });
   });
@@ -52,7 +74,7 @@ describe("Given a sum function", () => {
       const values = [2, 1, "4"];
 
       expect(() => {
-        sum(...values);
+        multiply(...values);
       }).toThrow(new Error(expectedError));
     });
   });
