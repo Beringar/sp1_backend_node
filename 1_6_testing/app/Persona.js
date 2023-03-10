@@ -9,7 +9,7 @@ class Persona {
   }
 
   dirNom() {
-    return this.nom;
+    console.log(this.nom);
   }
 }
 
