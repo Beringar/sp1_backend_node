@@ -1,0 +1,21 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Linux Torvalds"
+    },
+    {
+      "id": 2,
+      "name": "Bill Gates"
+    },
+    {
+      "id": 3,
+      "name": "Martin Fowler"
+    },
+    {
+      "id": 4,
+      "name": "Berenguer Pou"
+    }
+  ],
+  "salaries": "badSalariesObject"
+}
