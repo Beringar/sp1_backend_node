@@ -8,19 +8,19 @@ Developer: Berenguer Pou
 
 Des de la carpeta `/1_6_testing` :
 
-- Instal·lar dependències:
+### Instal·lar dependències:
 
 ```
 npm install
 ```
 
-- Executar tots els tests:
+### Executar tots els tests:
 
 ```
 npm test
 ```
 
-- Executar els test individualment. Des de la carpeta \_\_tests\_\_. Per exemple, per executar el test de l'arxiu `sum.test.js`:
+### Executar els test individualment. Des de la carpeta \_\_tests\_\_. Per exemple, per executar el test de l'arxiu `sum.test.js`:
 
 Si _jest_ està instal·lat globalment:
 
@@ -34,7 +34,7 @@ Si _jest_ no està instal·lat globalment:
 npx jest sum.test.js
 ```
 
-# Llista de tests
+# LLISTA DE TESTS:
 
 ## Nivell 1
 
