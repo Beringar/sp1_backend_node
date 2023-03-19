@@ -21,6 +21,8 @@ Utilitza l'intèrpret de node en tots els casos.
 
 **SOLUCIÓ Entrega 1.1: Functions & Template Literals** --> [entrega-1-1.js](entrega-1-1.js)
 
+---
+
 ## Entrega 1.2: Classes & Arrow Functions
 
 **Descripció**: Les arrow functions són una evolució de les funcions tradicionals. Les classes van ser introduïdes en EcmaScript 6 i treballarem amb elles en profunditat.
@@ -40,6 +42,8 @@ Utilitza l'intèrpret de node en tots els casos.
 - Exercici 1: Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
 
 **SOLUCIÓ Entrega 1.2: Classes & Arrow Functions** --> [entrega-1-2.js](entrega-1-2.js)
+
+---
 
 ## Entrega 1.3: Promises & Callbacks
 
@@ -99,6 +103,8 @@ let salaries = [
 
 **SOLUCIÓ Entrega 1.3: Promises & Callbacks** --> [entrega-1-3.js](entrega-1-3.js)
 
+---
+
 ## Entrega 1.4: Async / Await
 
 **Descripció**: La finalitat de les funcions asíncrones és simplificar el comportament de l'ús síncron de Promises i realitzar algun comportament específic en un grup de Promises. De la mateixa manera que les Promises són semblants a les devolucions de crides estructurades, les funcions amb async/await s'assemblen a una combinació de generadors i promises. Utilitza l'intèrpret de node en tots els casos.
@@ -119,3 +125,72 @@ let salaries = [
 - Exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2.
 
 **SOLUCIÓ Entrega 1.4: Async / Await** --> [entrega-1-4.js](entrega-1-4.js)
+
+---
+
+# Backend Node.js Sprint 1 - 1.5 Node Utils
+
+## Scripts per executar els exercicis de cada nivell
+
+Des del terminal, a la carpeta **/1_5_node_utils**, cal escriure el següent command per a cada exercici:
+
+npm run n[_num nivell_]e[_num exercici_]
+
+Per exemple per al Nivell 1 Exercici 1, cal escriure:
+
+```
+npm run n1e1
+```
+
+## **IMPORTANT: Com que s'escriuen i s'esborren arxius per a cada nivell i exercici de l'entrega 1.5 Node Utils, és important executar els exercicis en seqüència:**
+
+```
+npm run n1e1
+npm run n1e2
+npm run n1e3
+npm run n2e1
+npm run n2e2
+npm run n3e1-encode
+npm run n3e1-encrypt
+npm run n3e1-decrypt-decode
+```
+
+Si només es vol executar la part **Nivell 3 Exercici 1 (codificació, encriptació, desencriptació)**, s'ha de fer la seqüència següent:
+
+```
+npm run n1e1
+npm run n3e1-encode
+npm run n3e1-encrypt
+npm run n3e1-decrypt-decode
+```
+
+## Entrega 1.5: Node Utils
+
+**Descripció**: Els mòduls natius de Node.js permeten als desenvolupadors/es d'aplicacions i mòduls dur a terme diferents tasques: gestió d'arxius, processament d'informació, codificació i encriptació, entre d'altres. Necessitaràs donar un cop d'ull a la documentació de Node!
+
+Utilitza l'intèrpret de node en els exercicis i pensa que potser cal incloure instruccions d'instal·lació i/o execució perquè es pugui revisar cada part dels exercicis.
+
+### Nivell 1
+
+- Exercici 1: Crea una funció que, en executar-la, escrigui una frase en un fitxer.
+
+- Exercici 2: Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior.
+
+- Exercici 3: Crea una funció que comprimeixi el fitxer del nivell 1.
+
+### Nivell 2
+
+- Exercici 1: Crea una funció que imprimeixi recursivament un missatge per la consola amb demores d'un segon.
+
+- Exercici 2: Crea una funció que llisti per la consola el contingut del directori d'usuari/ària de l'ordinador utilizant Node Child Processes.
+
+### Nivell 3
+
+- Exercici 1:
+  - Crea una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer del nivell 1.
+  - Crea una funció que guardi els fitxers del punt anterior, ara encriptats amb l'algoritme aes-192-cbc, i esborri els fitxers inicials.
+  - Crea una altra funció que desencripti i descodifiqui els fitxers de l'apartat anterior tornant a generar una còpia de l'inicial.
+
+Inclou un README amb instruccions per a l'execució de cada part.
+
+**SOLUCIÓ Entrega 1.5: Node Utils** --> [./1_5_node_utils](./1_5_node_utils/)
